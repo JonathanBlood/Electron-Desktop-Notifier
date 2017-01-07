@@ -22,22 +22,20 @@ As a result the same json structure can be used to send a notification with the 
   'subtitle': void 0,
   'message': void 0,
   'sound': false, // Case Sensitive string for location of sound file, or use one of OS X's native sounds
-  'icon': 'Terminal Icon', // Absolute Path to Triggering Icon 
-  'contentImage': void 0, // Absolute Path to Attached Image (Content Image) 
-  'open': void 0, // URL to open on Click 
-  'wait': false // Wait for User Action against Notification 
+  'icon': 'Terminal Icon', // Absolute Path to Triggering Icon
+  'contentImage': void 0, // Absolute Path to Attached Image (Content Image)
+  'open': void 0, // URL to open on Click
+  'wait': false // Wait for User Action against Notification
 }
 ```
 
 ## How to run app
 
-1. Install Electron via `npm install -g electron@1.4.13`.
+1. Navigate into project directory `cd electron-simple-notifier`
 
-2. Navigate into project directory `cd electron-simple-notifier`
+2. Download Project dependencies `npm i`
 
-3. Download Project dependencies `npm i`
-
-2. Run the sample via `electron electron-simple-notifier`.
+3. Run the sample via `electron .`
 
 ## License
 

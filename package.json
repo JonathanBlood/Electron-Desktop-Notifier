@@ -8,6 +8,7 @@
   "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
   "main"    : "main.js",
   "dependencies" : {
+    "electron" : "^1.4.13",
     "node-notifier" : "^4.6.1",
     "express" : "^4.14.0",
     "body-parser" : "^1.15.2"
