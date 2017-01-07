@@ -7,15 +7,29 @@
   "license": "Apache",
   "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
   "main"    : "main.js",
-  "dependencies" : {
+  "devDependencies" : {
     "electron" : "^1.4.13",
     "electron-packager" : "^8.4.0",
+    "electron-builder" : "^10.17.3"
+  },
+  "dependencies" : {
     "node-notifier" : "^4.6.1",
     "express" : "^4.14.0",
     "body-parser" : "^1.15.2"
   },
+  "build": {
+  "appId": "com.jonathanblood.electrondesktopnotifiier",
+  "mac": {
+    "category": "com.jonathanblood.electrondesktopnotifiier"
+  },
+  "win": {
+    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
+  }
+},
   "scripts" : {
     "start": "electron .",
-    "package": "electron-packager . --platform mas,win32"
+    "package": "electron-packager . --platform mas,win32",
+    "pack": "build --dir --windows",
+    "dist": "build --windows"
   }
 }
