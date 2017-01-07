@@ -3,7 +3,7 @@
 A simple way to POST desktop notifications via a REST API.
 The application is build using Electron.
 
-## How to run apps
+## How to run app
 
 1. Install Electron via `npm install -g electron@1.4.13`.
 
@@ -15,4 +15,4 @@ The application is build using Electron.
 
 ## License
 
-electron-sample-apps is published under the Apache v2 license. See `LICENSE` for details.
+Electron Simple Desktop Notifier is published under the Apache v2 license. See `LICENSE` for details.
