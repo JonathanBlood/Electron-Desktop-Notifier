@@ -28,8 +28,7 @@
 },
   "scripts" : {
     "start": "electron .",
-    "package": "electron-packager . --platform mas,win32",
-    "pack": "build --dir --windows",
+    "package": "build --dir --windows",
     "dist": "build --windows"
   }
 }

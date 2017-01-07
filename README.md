@@ -40,7 +40,9 @@ As a result the same json structure can be used to send a notification with the 
 ## Package for Release
 1. Navigate into project directory `cd electron-simple-notifier`
 
-2. Download Project dependencies `npm run-script package`
+2. Download Project dependencies `npm run-script dist`
+
+3. This will create an installer for Windows in the *dist* folder.
 
 ## License
 
