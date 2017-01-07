@@ -6,17 +6,17 @@ The application is build using Electron.
 ## Usage
 When the application is running (default port is 9000).
 A notification can be send to that desktop over REST. Example using POSTMAN:
-![Postman](http://imgur.com/zlfyfrJ)
+![Postman](http://imgur.com/zlfyfrJ.png)
 
 When the call is made the notification will be send and looks something like (on Windows 10):
-![Notification](http://imgur.com/bnbFNGn)
+![Notification](http://imgur.com/bnbFNGn.png)
 
 ** Note: ** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
-![Tray](http://imgur.com/hwDxIGD)
+![Tray](http://i.imgur.com/hwDxIGD.png)
 
 The notifications are send using [node-notifier](https://www.npmjs.com/package/node-notifier).
 As a result the same json structure can be used to send a notification with the exception of the icon and contentImage fields for example:
-```json
+```javascript
 {
   'title': void 0,
   'subtitle': void 0,
@@ -27,7 +27,7 @@ As a result the same json structure can be used to send a notification with the 
   'open': void 0, // URL to open on Click 
   'wait': false // Wait for User Action against Notification 
 }
-```![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+```
 
 ## How to run app
 
