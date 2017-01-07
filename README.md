@@ -3,10 +3,19 @@
 A simple way to POST desktop notifications via a REST API.
 The application is build using Electron.
 
+[Download the latest release](https://github.com/JonathanBlood/Electron-Desktop-Notifier/releases)
+
+**Note:** When the application is installed it will appear in the tray. No action is required to get it running. Just follow the steps in the usage section to POST notification!
+
 ## Usage
 When the application is running (default port is 9000).
 A notification can be send to that desktop over REST. Example using POSTMAN:
 ![Postman](http://imgur.com/zlfyfrJ.png)
+
+CURL example:
+```bash
+curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","message" : "Sandwiches"}' http://localhost:9000/notification
+```
 
 When the call is made the notification will be send and looks something like (on Windows 10):
 ![Notification](http://imgur.com/bnbFNGn.png)
