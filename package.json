@@ -1,0 +1,13 @@
+{
+  "name"    : "electron-simple-notifier",
+  "version" : "1.0.0",
+  "description" : "A simple way to POST notifications to your desktop.",
+  "license": "Apache",
+  "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
+  "main"    : "main.js",
+  "dependencies" : {
+    "node-notifier" : "^4.6.1",
+    "express" : "^4.14.0",
+    "body-parser" : "^1.15.2"
+  }
+}
