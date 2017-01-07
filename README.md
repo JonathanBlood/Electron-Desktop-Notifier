@@ -37,6 +37,11 @@ As a result the same json structure can be used to send a notification with the 
 
 3. Run the sample via `electron .`
 
+## Package for Release
+1. Navigate into project directory `cd electron-simple-notifier`
+
+2. Download Project dependencies `npm run-script package`
+
 ## License
 
 Electron Simple Desktop Notifier is published under the Apache v2 license. See `LICENSE` for details.

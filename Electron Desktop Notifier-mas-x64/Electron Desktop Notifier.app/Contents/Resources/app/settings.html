@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Settings</h2>
+        <form class="form-horizontal">
+            <label class="sr-only" for="port">Port</label>
+            <div class="input-group">
+                <div class="input-group-addon">Port</div>
+                <input type="text" class="form-control" id="port" value="9000">
+            </div>
+            <br />
+            <button class="btn btn-primary btn-block" button id="save">Save</button>
+            <br />
+            <h3>Information</h3>
+            <table class="table table-condensed">
+              <tr>
+                <th>Application</th>
+                <th>version</th>
+              </tr>
+              <tr>
+                <td>Node</td>
+                <td><script>document.write(process.versions.node)</script></td>
+              </tr>
+              <tr>
+                <td>Chrome</td>
+                <td><script>document.write(process.versions.chrome)</script></td>
+              </tr>
+              <tr>
+                <td>Electron</td>
+                <td><script>document.write(process.versions.electron)</script></td>
+              </tr>
+            </table>
+        </form>
+    </div>
+
+
+    <script>
+        window.jQuery = window.$ = require('jquery');
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="settings.js"></script>
+</body>
+
+</html>

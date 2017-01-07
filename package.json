@@ -16,6 +16,6 @@
   },
   "scripts" : {
     "start": "electron .",
-    "package": "electron-packager . --all"
+    "package": "electron-packager . --platform mas,win32"
   }
 }
