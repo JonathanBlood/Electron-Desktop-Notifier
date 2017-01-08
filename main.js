@@ -7,7 +7,6 @@ const {
 const path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
-const notifier = require('node-notifier');
 
 var ipcMain = require('electron').ipcMain;
 const iconPath = path.join(__dirname, 'icon.png');
@@ -66,25 +65,23 @@ function startNotificationListener() {
         notificationListener.listen(global.settings.port);
         console.log("Listening for notifications on http://localhost:%s", global.settings.port);
     });
-    buildNotificationEndpoint();
+    registerNotificationEndpoints();
 }
 
 // Builds the notification endpoint who will listen for notifications and create a system notification from it
-function buildNotificationEndpoint() {
+function registerNotificationEndpoints() {
     notificationListener.use(bodyParser.json());
-    notificationListener.post('/notification', function(req, res) {
-        if (!req.body.title || typeof req.body.title != "string" || !req.body.message || typeof req.body.message != "string") {
-            res.status(400);
-            res.json({
-                message: "Failed to send notification."
-            });
-        } else {
-            req.body.icon = path.join(__dirname, 'icon.png');
-            notifier.notify(req.body);
-            res.status(200);
-            res.json({
-                message: "Notification send."
-            });
+    var pjson = require('./package.json');
+    for (dependency in pjson.dependencies) {
+        // Find REST endpoint modules and load them so they can be used to register endpoints
+        if (dependency.indexOf('esnrest-') === 0) {
+            var endpoints = require(dependency);
+            if (typeof endpoints.registerEndpoints == 'function') {
+                console.log("Loaded module " + dependency);
+                endpoints.registerEndpoints(notificationListener, app);
+            } else {
+                console.log("Failed to register module: " + dependency + " as it is missing required function registerEndpoints(api, app)");
+            }
         }
-    });
+    }
 }
