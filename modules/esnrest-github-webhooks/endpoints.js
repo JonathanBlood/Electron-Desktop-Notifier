@@ -1,5 +1,5 @@
 module.exports = {
-    registerEndpoints: function(api, app) {
+    registerEndpoints: function(api) {
         api.post('/notification/github/webhook/push', function(req, res) {
           var body = req.body;
             if (!body) {
@@ -13,10 +13,9 @@ module.exports = {
                 notifier.notify({
                     'title': 'Change pushed to repository: ' + body.repository.full_name,
                     'message': 'Pushed to ' + body.ref + " by " + body.pusher.name,
-                    'icon': path.join(app.getAppPath(), 'icon.png'),
-                    'contentImage': path.join(__dirname, 'github.png'),
-                    'open': body.compare,
-                    'wait': true
+                    'icon': path.join(__dirname, 'github.png'),
+                    'wait': true,
+                    'sound': true
                 });
                 res.status(200);
                 res.json({

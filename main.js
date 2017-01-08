@@ -78,9 +78,9 @@ function registerNotificationEndpoints() {
             var endpoints = require(dependency);
             if (typeof endpoints.registerEndpoints == 'function') {
                 console.log("Loaded module " + dependency);
-                endpoints.registerEndpoints(notificationListener, app);
+                endpoints.registerEndpoints(notificationListener);
             } else {
-                console.log("Failed to register module: " + dependency + " as it is missing required function registerEndpoints(api, app)");
+                console.log("Failed to register module: " + dependency + " as it is missing required function registerEndpoints(api)");
             }
         }
     }
