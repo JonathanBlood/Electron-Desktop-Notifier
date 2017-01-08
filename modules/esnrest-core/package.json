@@ -1,0 +1,9 @@
+{
+  "name"    : "esnrest-core",
+  "productName" : "Core REST endpoint",
+  "version" : "1.0.0",
+  "app-version" : "1.0.0",
+  "description" : "Add REST endpoint to receive notifications for electron-simple-notifier",
+  "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
+  "main"    : "endpoints.js"
+}

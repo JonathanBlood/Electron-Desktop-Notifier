@@ -18,9 +18,9 @@ curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","
 ```
 
 When the call is made the notification will be send and looks something like (on Windows 10):
-![Notification](http://imgur.com/bnbFNGn.png)
+![Notification](http://imgur.com/bnbFNGn.png) 
 
-** Note: ** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
+**Note:** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
 ![Tray](http://i.imgur.com/hwDxIGD.png)
 
 The notifications are send using [node-notifier](https://www.npmjs.com/package/node-notifier).
@@ -31,8 +31,6 @@ As a result the same json structure can be used to send a notification with the 
   'subtitle': void 0,
   'message': void 0,
   'sound': false, // Case Sensitive string for location of sound file, or use one of OS X's native sounds
-  'icon': 'Terminal Icon', // Absolute Path to Triggering Icon
-  'contentImage': void 0, // Absolute Path to Attached Image (Content Image)
   'open': void 0, // URL to open on Click
   'wait': false // Wait for User Action against Notification
 }

@@ -1,0 +1,9 @@
+{
+  "name"    : "esnrest-github-webhooks",
+  "productName" : "Endpoints to listen for GitHub webhooks (https://developer.github.com/webhooks/)",
+  "version" : "1.0.0",
+  "app-version" : "1.0.0",
+  "description" : "Add REST endpoints to receive GIT webhooks for electron-simple-notifier",
+  "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
+  "main"    : "endpoints.js"
+}
