@@ -20,7 +20,7 @@ curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","
 When the call is made the notification will be send and looks something like (on Windows 10):
 ![Notification](http://imgur.com/bnbFNGn.png)
 
-** Note: ** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
+**Note:** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
 ![Tray](http://i.imgur.com/hwDxIGD.png)
 
 The notifications are send using [node-notifier](https://www.npmjs.com/package/node-notifier).
