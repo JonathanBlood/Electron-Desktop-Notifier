@@ -1,5 +1,5 @@
 module.exports = {
-    registerEndpoints: function(api) {
+    load: function(api) {
         api.post('/notification', function(req, res) {
             if (!req.body.title || typeof req.body.title != "string" || !req.body.message || typeof req.body.message != "string") {
                 res.status(400);

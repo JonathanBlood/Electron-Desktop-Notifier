@@ -5,42 +5,54 @@ const {
     BrowserWindow
 } = require('electron');
 const path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser');
-
-var ipcMain = require('electron').ipcMain;
 const iconPath = path.join(__dirname, 'icon.png');
-var notificationListener = express();
 let appIcon = null;
 let win = null;
 let settingsWindow = null;
+let notificationServer = require('esn-notification-server');
 
-global.settings = {
-    port: 9000
-};
+// Start the application.
+function startApplication() {
 
-// Main application starting point
-app.on('ready', function() {
+    // Create the browser window.
     win = new BrowserWindow({
         show: false
     });
-    buildTray(win);
-    startNotificationListener();
-});
+    global.settings.windowSet.add(win);
 
+    // Create the tray.
+    createTray(win);
 
-// Build the OS tray
-function buildTray(win) {
+    // Start the notification server.
+    notificationServer.listen(global.settings.port);
+
+    // Emitted when the window is closed.
+    win.on('closed', () => {
+        global.settings.windowSet.delete(win);
+    });
+}
+
+// Create settings window.
+function createSettingsWindow() {
+    settingsWindow = new BrowserWindow({
+        width: 800,
+        height: 600
+    });
+    global.settings.windowSet.add(settingsWindow);
+    settingsWindow.loadURL('file://' + __dirname + '/settings.html');
+
+    // Emitted when the window is closed.
+    settingsWindow.on('closed', () => {
+        global.settings.windowSet.delete(win);
+    });
+}
+
+// Build the OS tray.
+function createTray(win) {
     appIcon = new Tray(iconPath);
     var contextMenu = Menu.buildFromTemplate([{
             label: 'Settings',
-            click: function() {
-                settingsWindow = new BrowserWindow({
-                    width: 800,
-                    height: 600
-                });
-                settingsWindow.loadURL('file://' + __dirname + '/settings.html');
-            }
+            click: createSettingsWindow
         },
         {
             label: 'Quit',
@@ -53,34 +65,12 @@ function buildTray(win) {
     appIcon.setContextMenu(contextMenu);
 }
 
-// Start REST API which contains an endpoint for retrieving notifications
-function startNotificationListener() {
-    var server = notificationListener.listen(global.settings.port);
-    console.log("Listening for notifications on http://localhost:%s", global.settings.port);
+global.settings = {
+    port: 38866,
+    windowSet: new Set([])
+};
 
-    // If port is changed in settings.html page reload server
-    ipcMain.on('port-changed', function(event) {
-        server.close();
-        notificationListener.listen(global.settings.port);
-        console.log("Listening for notifications on http://localhost:%s", global.settings.port);
-    });
-    registerNotificationEndpoints();
-}
-
-// Builds the notification endpoint who will listen for notifications and create a system notification from it
-function registerNotificationEndpoints() {
-    notificationListener.use(bodyParser.json());
-    var pjson = require('./package.json');
-    for (dependency in pjson.dependencies) {
-        // Find REST endpoint modules and load them so they can be used to register endpoints
-        if (dependency.indexOf('esnrest-') === 0) {
-            var endpoints = require(dependency);
-            if (typeof endpoints.registerEndpoints == 'function') {
-                console.log("Loaded module " + dependency);
-                endpoints.registerEndpoints(notificationListener);
-            } else {
-                console.log("Failed to register module: " + dependency + " as it is missing required function registerEndpoints(api)");
-            }
-        }
-    }
-}
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', startApplication);

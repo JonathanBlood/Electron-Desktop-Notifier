@@ -1,7 +1,7 @@
 module.exports = {
-    registerEndpoints: function(api) {
+    load: function(api) {
         api.post('/notification/github/webhook/push', function(req, res) {
-          var body = req.body;
+            var body = req.body;
             if (!body) {
                 res.status(400);
                 res.json({

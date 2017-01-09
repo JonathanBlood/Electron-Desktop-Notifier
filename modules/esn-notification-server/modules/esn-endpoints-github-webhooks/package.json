@@ -1,5 +1,5 @@
 {
-  "name"    : "esnrest-github-webhooks",
+  "name"    : "esn-endpoints-github-webhooks",
   "productName" : "Endpoints to listen for GitHub webhooks (https://developer.github.com/webhooks/)",
   "version" : "1.0.0",
   "app-version" : "1.0.0",
