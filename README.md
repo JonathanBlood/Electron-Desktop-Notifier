@@ -1,4 +1,7 @@
 # Electron Simple Desktop Notifier
+<p align="center">
+  <img src="http://i.imgur.com/3OloOtt.png" alt="Logo"/>
+</p>
 
 A simple way to POST desktop notifications via a REST API.
 The application is build using Electron.
@@ -18,10 +21,10 @@ curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","
 ```
 
 When the call is made the notification will be send and looks something like (on Windows 10):
-![Notification](http://imgur.com/bnbFNGn.png)
+![Notification](http://i.imgur.com/7wUxaMI.png)
 
 **Note:** The port can be changed by right clicking the icon in the tray and clicking into *Settings*.
-![Tray](http://i.imgur.com/hwDxIGD.png)
+![Tray](http://i.imgur.com/Yr34Yuh.png)
 
 The notifications are send using [node-notifier](https://www.npmjs.com/package/node-notifier).
 As a result the same json structure can be used to send a notification with the exception of the icon and contentImage fields for example:

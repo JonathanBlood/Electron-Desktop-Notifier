@@ -1,8 +1,8 @@
 {
   "name"    : "electron-simple-notifier",
   "productName" : "Electron Desktop Notifier",
-  "version" : "1.0.1",
-  "app-version" : "1.0.1",
+  "version" : "1.0.2",
+  "app-version" : "1.0.2",
   "description" : "A simple way to POST notifications to your desktop.",
   "license": "Apache",
   "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
