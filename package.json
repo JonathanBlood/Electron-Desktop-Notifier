@@ -13,11 +13,7 @@
     "electron-builder" : "^10.17.3"
   },
   "dependencies" : {
-    "node-notifier" : "^4.6.1",
-    "express" : "^4.14.0",
-    "body-parser" : "^1.15.2",
-    "esnrest-core": "file:modules/esnrest-core",
-    "esnrest-github-webhooks": "file:modules/esnrest-github-webhooks"
+    "esn-notification-server": "file:modules/esn-notification-server"
   },
   "build": {
   "asar": false,
@@ -30,7 +26,7 @@
   }
 },
   "scripts" : {
-    "start": "electron .",
+    "start": "cd node_modules && rm -rf esn-* && npm i && cd .. && electron .",
     "package": "build --dir --windows",
     "dist": "build --windows"
   }

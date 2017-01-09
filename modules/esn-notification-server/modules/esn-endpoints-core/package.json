@@ -1,5 +1,5 @@
 {
-  "name"    : "esnrest-core",
+  "name"    : "esn-endpoints-core",
   "productName" : "Core REST endpoint",
   "version" : "1.0.0",
   "app-version" : "1.0.0",
