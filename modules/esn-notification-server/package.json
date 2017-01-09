@@ -1,0 +1,21 @@
+{
+  "name"    : "esn-notification-server",
+  "productName" : "Notification Server",
+  "version" : "1.0.0",
+  "app-version" : "1.0.0",
+  "description" : "A express server to listen for desktop notifications.",
+  "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
+  "main"    : "server.js",
+  "dependencies" : {
+    "esn-endpoints-core": "file:modules/esn-endpoints-core",
+    "esn-endpoints-github-webhooks": "file:modules/esn-endpoints-github-webhooks",
+    "node-notifier" : "^4.6.1",
+    "express" : "^4.14.0",
+    "body-parser" : "^1.15.2"
+  },
+  "devDependencies" : {
+    "electron" : "^1.4.13",
+    "electron-packager" : "^8.4.0",
+    "electron-builder" : "^10.17.3"
+  }
+}
