@@ -26,7 +26,6 @@ app.on('ready', function() {
     });
     buildTray(win);
     startNotificationListener();
-
 });
 
 

@@ -30,7 +30,7 @@
   }
 },
   "scripts" : {
-    "start": "electron .",
+    "start": "cd node_modules && rm -rf esnrest-* && npm i && cd .. && electron .",
     "package": "build --dir --windows",
     "dist": "build --windows"
   }
