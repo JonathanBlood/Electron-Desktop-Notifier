@@ -5,7 +5,6 @@ const {
     BrowserWindow
 } = require('electron');
 const path = require('path');
-const iconPath = path.join(__dirname, 'icon.png');
 let appIcon = null;
 let win = null;
 let settingsWindow = null;
@@ -49,7 +48,8 @@ function createSettingsWindow() {
 
 // Build the OS tray.
 function createTray(win) {
-    appIcon = new Tray(iconPath);
+    var trayIcon = (process.platform !== 'darwin') ? 'icon.png' : 'traydarwin.png';
+    appIcon = new Tray(path.join(__dirname, trayIcon));
     var contextMenu = Menu.buildFromTemplate([{
             label: 'Settings',
             click: createSettingsWindow
