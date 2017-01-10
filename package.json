@@ -28,6 +28,8 @@
   "scripts" : {
     "start": "cd node_modules && rm -rf esn-* && npm i && cd .. && electron .",
     "package": "build --dir --windows",
-    "dist": "build --windows"
+    "dist-windows": "build --windows",
+    "dist-mac": "build --mac",
+    "dist-linux": "build --linux"
   }
 }
