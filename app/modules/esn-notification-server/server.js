@@ -35,8 +35,8 @@ module.exports = {
         // If port is changed in settings.html page reload server
         ipcMain.on('port-changed', function(event) {
             server.close();
-            notificationListener.listen(port);
-            console.log("Listening for notifications on http://localhost:%s", port);
+            notificationListener.listen(global.settings.port);
+            console.log("Listening for notifications on http://localhost:%s", global.settings.port);
         });
         loadAllModuleEndpoints();
     }
