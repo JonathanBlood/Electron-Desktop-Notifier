@@ -1,19 +1,19 @@
 {
   "name"    : "electron-simple-notifier",
   "productName" : "Electron Desktop Notifier",
-  "version" : "1.0.2",
-  "app-version" : "1.0.2",
+  "version" : "1.0.3",
+  "app-version" : "1.0.3",
   "description" : "A simple way to POST notifications to your desktop.",
   "license": "Apache",
   "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
-  "main"    : "main.js",
+  "main"    : "app/main.js",
   "devDependencies" : {
     "electron" : "^1.4.13",
     "electron-packager" : "^8.4.0",
     "electron-builder" : "^10.17.3"
   },
   "dependencies" : {
-    "esn-notification-server": "file:modules/esn-notification-server"
+    "esn-notification-server": "file:app/modules/esn-notification-server"
   },
   "build": {
   "asar": false,

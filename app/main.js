@@ -34,8 +34,10 @@ function startApplication() {
 // Create settings window.
 function createSettingsWindow() {
     settingsWindow = new BrowserWindow({
-        width: 800,
-        height: 600
+        width: 300,
+        height: 425,
+        minWidth: 300,
+        minHeight: 425
     });
     global.settings.windowSet.add(settingsWindow);
     settingsWindow.loadURL('file://' + __dirname + '/settings.html');
@@ -49,7 +51,7 @@ function createSettingsWindow() {
 // Build the OS tray.
 function createTray(win) {
     var trayIcon = (process.platform !== 'darwin') ? 'icon.png' : 'traydarwin.png';
-    appIcon = new Tray(path.join(__dirname, trayIcon));
+    appIcon = new Tray(path.join(__dirname + "/resources/images/", trayIcon));
     var contextMenu = Menu.buildFromTemplate([{
             label: 'Settings',
             click: createSettingsWindow
