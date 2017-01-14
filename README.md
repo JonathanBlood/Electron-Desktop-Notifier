@@ -10,6 +10,9 @@ The application is build using Electron.
 
 **Note:** When the application is installed it will appear in the tray. No action is required to get it running. Just follow the steps in the usage section to POST notification!
 
+## New Features
+* Added support Github webhooks (see [webhook module](https://github.com/JonathanBlood/Electron-Desktop-Notifier/tree/develop/app/modules/esn-notification-server/modules/esn-endpoints-github-webhooks) for information on the webhook endpoints.
+
 ## Usage
 When the application is running (default port is 9000).
 A notification can be send to that desktop over REST. Example using POSTMAN:
