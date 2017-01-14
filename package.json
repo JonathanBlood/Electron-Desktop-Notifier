@@ -30,6 +30,6 @@
     "package": "build --dir --windows",
     "dist-windows": "build --windows",
     "dist-mac": "build --mac",
-    "dist-linux": "build --linux"
+    "dist-linux": "build --linux AppImage"
   }
 }
