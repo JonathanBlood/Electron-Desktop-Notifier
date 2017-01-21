@@ -5,11 +5,12 @@ Information on Jira Webhooks: https://developer.atlassian.com/jiradev/jira-apis/
 The endpoint for the Jira webhooks is: *notification/jira/webhook/push*
 
 The Jira webhooks supported are:
-| Type                       | Event                        |
-| ---------------------------|------------------------------|
-| Issue                      | Created                      |
-| Issue                      | Updated                      |
-| Issue                      | Deleted                      |
+
+
+| Type | Event |
+| --- | --- |
+| Issue | Created |
+| Issue | Updated |s
 
 
 *Note:* In order for Jira to be able to talk to the notification server. You may need to configure port forwarding in your network settings. The port of the notification server can be seen by right clicking the tray icon and selecting *Settings*.
