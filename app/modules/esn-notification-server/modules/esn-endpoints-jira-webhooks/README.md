@@ -5,8 +5,8 @@ Information on Jira Webhooks: https://developer.atlassian.com/jiradev/jira-apis/
 The endpoint for the Jira webhooks is: *notification/jira/webhook/push*
 
 The Jira webhooks supported are:
-| Type                      | Event                         |
-| --------------------------|:------------------------------|
+| Type                       | Event                        |
+| ---------------------------|------------------------------|
 | Issue                      | Created                      |
 | Issue                      | Updated                      |
 | Issue                      | Deleted                      |
