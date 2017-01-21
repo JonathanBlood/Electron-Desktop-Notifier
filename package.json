@@ -10,7 +10,10 @@
   "devDependencies" : {
     "electron" : "^1.4.13",
     "electron-packager" : "^8.4.0",
-    "electron-builder" : "^10.17.3"
+    "electron-builder" : "^10.17.3",
+    "mocha" : "^3.2.0",
+    "supertest" : "^2.0.1",
+    "should" : "^11.1.2"
   },
   "dependencies" : {
     "esn-notification-server": "file:app/modules/esn-notification-server"
@@ -27,7 +30,7 @@
 },
   "scripts" : {
     "start": "cd node_modules && rm -rf esn-* && npm i && cd .. && electron .",
-    "package": "build --dir --windows",
+    "test": "mocha",
     "dist-windows": "build --windows",
     "dist-mac": "build --mac",
     "dist-linux": "build --linux AppImage"
