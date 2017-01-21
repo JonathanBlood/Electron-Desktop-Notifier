@@ -68,7 +68,7 @@ function createTray(win) {
 }
 
 global.settings = {
-    port: 38866,
+    port: 9000,
     windowSet: new Set([])
 };
 

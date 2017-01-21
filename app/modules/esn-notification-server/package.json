@@ -9,6 +9,7 @@
   "dependencies" : {
     "esn-endpoints-core": "file:modules/esn-endpoints-core",
     "esn-endpoints-github-webhooks": "file:modules/esn-endpoints-github-webhooks",
+    "esn-endpoints-jira-webhooks": "file:modules/esn-endpoints-jira-webhooks",
     "node-notifier" : "^4.6.1",
     "express" : "^4.14.0",
     "body-parser" : "^1.15.2"
