@@ -1,0 +1,9 @@
+{
+  "name"    : "esn-endpoints-jira-webhooks",
+  "productName" : "Endpoints to listen for Jira webhooks (https://developer.atlassian.com/jiradev/jira-apis/webhooks)",
+  "version" : "1.0.0",
+  "app-version" : "1.0.0",
+  "description" : "Add REST endpoints to receive Jira webhooks for electron-simple-notifier",
+  "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
+  "main"    : "endpoints.js"
+}
