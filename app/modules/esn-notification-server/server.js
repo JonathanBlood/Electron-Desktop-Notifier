@@ -30,7 +30,6 @@ module.exports = {
     // Start REST API which contains an endpoint for retrieving notifications.
     listen: function(port) {
         server = notificationListener.listen(port);
-        console.log("Listening for notifications on http://localhost:%s", port);
 
         // If port is changed in settings.html page reload server
         if (electronSupport) {

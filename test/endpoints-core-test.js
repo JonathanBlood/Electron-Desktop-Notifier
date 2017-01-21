@@ -2,7 +2,7 @@ var should = require('should');
 var assert = require('assert');
 var request = require('supertest');
 
-describe('Core Endpoints', function() {
+describe('Endpoints: Core', function() {
     var url = 'http://localhost:9000';
     var server;
     beforeEach(function() {
