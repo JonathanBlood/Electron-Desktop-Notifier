@@ -1,0 +1,6 @@
+theme: jekyll-theme-cayman
+title: Electron Desktop Notifier
+markdown: kramdown
+
+markdown: kramdown
+highlighter: rouge
