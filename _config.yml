@@ -1,2 +1,5 @@
 theme: jekyll-theme-cayman
 title: Electron Desktop Notifier
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
