@@ -46,9 +46,11 @@ As a result the same json structure can be used to send a notification with the 
 
 1. Navigate into project directory `cd electron-simple-notifier`
 
-2. Download Project dependencies `npm i`
+2. Install Electron globally: `npm install -g electron`
 
-3. Run the sample via `electron .`
+3. Download Project dependencies `npm i`
+
+4. Run the sample via `electron .`
 
 ## Package for Release
 1. Navigate into project directory `cd electron-simple-notifier`
