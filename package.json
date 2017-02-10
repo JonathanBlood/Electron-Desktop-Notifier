@@ -1,35 +1,40 @@
 {
-  "name"    : "electron-simple-notifier",
-  "productName" : "Electron Desktop Notifier",
-  "version" : "1.0.3",
-  "app-version" : "1.0.3",
-  "description" : "A simple way to POST notifications to your desktop.",
+  "name": "electron-simple-notifier",
+  "productName": "Electron Desktop Notifier",
+  "version": "1.0.4",
+  "app-version": "1.0.4",
+  "description": "A simple way to POST notifications to your desktop.",
   "license": "Apache",
   "author": "Jonathan Blood <JonathanPhilipBlood@gmail.com> (http://jonathanblood.net/)",
-  "main"    : "app/main.js",
-  "devDependencies" : {
-    "electron" : "^1.4.13",
-    "electron-packager" : "^8.4.0",
-    "electron-builder" : "^10.17.3"
+  "main": "app/main.js",
+  "devDependencies": {
+    "electron": "^1.4.13",
+    "electron-builder": "^10.17.3",
+    "electron-packager": "^8.4.0",
+    "mocha": "^3.2.0",
+    "rewire": "^2.5.2",
+    "should": "^11.1.2",
+    "sinon": "^1.17.7",
+    "supertest": "^2.0.1"
   },
-  "dependencies" : {
+  "dependencies": {
     "esn-notification-server": "file:app/modules/esn-notification-server"
   },
   "build": {
-  "asar": false,
-  "appId": "com.jonathanblood.electrondesktopnotifiier",
-  "mac": {
-    "category": "com.jonathanblood.electrondesktopnotifiier"
+    "asar": false,
+    "appId": "com.jonathanblood.electrondesktopnotifiier",
+    "mac": {
+      "category": "com.jonathanblood.electrondesktopnotifiier"
+    },
+    "win": {
+      "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
+    }
   },
-  "win": {
-    "iconUrl": "http://eatodo.s3.amazonaws.com/icon.ico"
-  }
-},
-  "scripts" : {
+  "scripts": {
     "start": "cd node_modules && rm -rf esn-* && npm i && cd .. && electron .",
-    "package": "build --dir --windows",
+    "test": "mocha",
     "dist-windows": "build --windows",
     "dist-mac": "build --mac",
-    "dist-linux": "build --linux"
+    "dist-linux": "build --linux deb"
   }
 }
