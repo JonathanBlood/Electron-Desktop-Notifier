@@ -1,14 +1,21 @@
 var should = require('should');
 var assert = require('assert');
 var request = require('supertest');
+var rewire = require('rewire');
+var sinon = require('sinon');
 
 describe('Endpoints: Core', function() {
     var url = 'http://localhost:9000';
     var server;
     beforeEach(function() {
-        server = require('esn-notification-server');
+        server = rewire('esn-notification-server');
         server.setElectronSupport(false);
+        this.notifier = {
+          notify: sinon.spy()
+        }
+        server.__set__("notifier", this.notifier);
         server.listen(9000);
+
     });
     afterEach(function() {
         server.close();

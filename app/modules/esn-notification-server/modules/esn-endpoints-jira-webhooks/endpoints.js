@@ -1,4 +1,3 @@
-var notifier = require('node-notifier');
 var path = require('path');
 var icon = path.join(__dirname, 'jira.png');
 var url = '/notification/jira/webhook';
@@ -40,7 +39,7 @@ function parseWebhookResponse(body) {
 }
 
 module.exports = {
-    load: function(api) {
+    load: function(api, notifier) {
 
         api.post(url, function(req, res) {
             var body = req.body;
