@@ -1,9 +1,8 @@
-var notifier = require('node-notifier');
 var path = require('path');
 var icon = path.join(__dirname, 'github.png');
 var baseUrl = '/notification/github/webhook';
 module.exports = {
-    load: function(api) {
+    load: function(api, notifier) {
 
         //
         // Webhook: COMMIT_COMMENT

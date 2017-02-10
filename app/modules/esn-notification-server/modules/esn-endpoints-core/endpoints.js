@@ -1,5 +1,5 @@
 module.exports = {
-    load: function(api) {
+    load: function(api, notifier) {
         api.post('/notification', function(req, res) {
             if (!req.body.title || typeof req.body.title != "string" || !req.body.message || typeof req.body.message != "string") {
                 res.status(400);
@@ -7,7 +7,6 @@ module.exports = {
                     message: "Failed to send notification."
                 });
             } else {
-                var notifier = require('node-notifier');
                 var path = require('path');
                 req.body.icon = path.join(__dirname, 'icon.png');
                 req.body.sound = true;

@@ -1,6 +1,7 @@
 const path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
+var notifier = require('node-notifier');
 var notificationListener = express();
 var server;
 var electronSupport = true;
@@ -19,7 +20,7 @@ function loadEndpoint(dependency) {
     if (dependency.indexOf('esn-endpoints-') === 0) {
         var endpoints = require(dependency);
         if (typeof endpoints.load == 'function') {
-            endpoints.load(notificationListener);
+            endpoints.load(notificationListener, notifier);
         } else {
             console.log("Failed to register module: " + dependency + " as it is missing required function load(api)");
         }
