@@ -33,6 +33,6 @@
     "test": "mocha",
     "dist-windows": "build --windows",
     "dist-mac": "build --mac",
-    "dist-linux": "build --linux AppImage"
+    "dist-linux": "build --linux deb"
   }
 }
