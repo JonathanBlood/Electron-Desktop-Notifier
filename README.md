@@ -20,7 +20,7 @@ A notification can be send to that desktop over REST. Example using POSTMAN:
 
 CURL example:
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","message" : "Sandwiches"}' http://localhost:38866/notification
+curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","message" : "Sandwiches"}' http://localhost:9000/notification
 ```
 
 When the call is made the notification will be send and looks something like (on Windows 10):
@@ -46,9 +46,11 @@ As a result the same json structure can be used to send a notification with the 
 
 1. Navigate into project directory `cd electron-simple-notifier`
 
-2. Download Project dependencies `npm i`
+2. Install Electron globally: `npm install -g electron`
 
-3. Run the sample via `electron .`
+3. Download Project dependencies `npm i`
+
+4. Run the sample via `electron .`
 
 ## Package for Release
 1. Navigate into project directory `cd electron-simple-notifier`
