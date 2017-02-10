@@ -20,7 +20,7 @@ A notification can be send to that desktop over REST. Example using POSTMAN:
 
 CURL example:
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","message" : "Sandwiches"}' http://localhost:38866/notification
+curl -H "Content-Type: application/json" -X POST -d '{"title" : "Hello world!","message" : "Sandwiches"}' http://localhost:9000/notification
 ```
 
 When the call is made the notification will be send and looks something like (on Windows 10):
